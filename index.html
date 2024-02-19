@@ -6,7 +6,6 @@ title: anin
 <p><i>site.url</i> = {{ site.url }}</p>
 <p><i>site.baseurl</i> = {{ site.baseurl }}</p>
 
-{% for tag in site.tags %}
-  Name: {{ tag | first }},
-  count: {{ tag | last | size}}
-{% endfor %}
+{% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
