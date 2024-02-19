@@ -5,3 +5,8 @@ title: anin
 <h1>It works!</h1>
 <p><i>site.url</i> = {{ site.url }}</p>
 <p><i>site.baseurl</i> = {{ site.baseurl }}</p>
+
+{% for tag in site.tags %}
+  Name: {{ tag | first }},
+  count: {{ tag | last | size}}
+{% endfor %}
